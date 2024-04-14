@@ -25,7 +25,7 @@ body{
 }
 .logo{
     position: relative;
-    font-size: 25px;
+    font-size: 34px;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -55,7 +55,7 @@ span{
     color: purple;
 }
 .contact{
-    padding:10px 28px;
+    padding:5px 10px;
     background-color: white;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -101,7 +101,7 @@ span{
     gap: 2em;
 }
 .btn-1{
-    padding 15px 28px;
+    padding:15px 28px;
     background-color:red;
     color:white;
     border: 2px solid transparent;
@@ -209,59 +209,73 @@ span{
     width:50%;
     animation: burpsuite 3s;
 }
-@keyframes html{
-    0%{
-        width: 0%;
-        100%{ /* TODO: 100 % should be separated from 0% */
-            width:20%;
-        }
+@keyframes html {
+    0% {
+      width: 0%;
     }
-}
+    100% {
+      width: 20%;
+    }
+  }
 @keyframes python{
     0%{
         width: 0%;
-        100%{ /* TODO: 100 % should be separated from 0% */
+    }
+        100%{
             width:20%;
         }
     }
-}
 @keyframes burpsuite{
     0%{
         width: 0%;
-        100%{ /* TODO: 100 % should be separated from 0% */
+    }
+        100%{
             width:50%;
         }
     }
-}
-.contact-form h2{
-    text-align: center;
-    margin-top: 3em;
-    margin-bottom: 1em;
-    font-size: 36px;
-}
-.contact-form{
-    max-width: 500em;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3em;
-    color:black;
-}
-.contact-form .input-box{
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.contact-form form .input-box input,
-.contact-form form textarea{
-    width:100%;
-    padding:1.5em;
-    font-size:18px;
+    .contact-form {
+        max-width: 600px; 
+        margin: 0 auto; 
+        text-align: center;
+        margin-bottom: 3em;
+        color: black;
+    }
+    
+    .contact-form h2 {
+        margin-top: 3em;
+        margin-bottom: 1em;
+        font-size: 36px;
+    }
+    
+    .contact-form .input-box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .contact-form form .input-box input,
+    .contact-form form textarea {
+    width: calc(100% - 40px); 
+    padding: 1em;
+    font-size: 18px;
     color: black;
     background: white;
     border-radius: .8rem;
-    margin:1rem 0;
+    margin: 1em 10px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
     resize: none;
 }
+    .contact-form form .input-box input[type="submit"] {
+        width: 100%; 
+        margin: 20px 0; 
+    }
+    
+    .contact-form form .input-box textarea {
+        width: calc(100% - 20px); 
+        margin: 1em 10px;
+    }
+    
 .footer{
     position: relative;
     bottom: 0;
@@ -287,11 +301,6 @@ span{
     margin:0 8px;
     box-shadow: inset 0 0 10px #1c1c44,0 0 10px #1c1c44;
     transition: 0.3s ease;
-}
-.footer .social a:hover{ /* TODO: Don't put animation in the social media icons, it doesnot look nice */
-    transform:scale(1,2) translateY(-10px);
-    color:#1c1c44;
-    border: 2px solid #1c1c44;
 }
 .footer ul{
     margin-top: 0;
@@ -361,34 +370,60 @@ span{
     float: left; 
   }
   .projects {
-    background-color:black;
-  padding: 12% 8%;
-  }
-  
-  .project-pic1 {
-    width: 65%;
-    height: 60%;
-  }
-  .project-pic2 {
-    width: 90%;
-    height: 80%;
-  }
-  .project-pic3 {
-    width: 40%;
-    height: 80%;
-    position: relative;
-    left:130px;
-  }
-  .projects h2{
+    background-color: black;
+    padding: 1% 1%;
+}
+
+.projects h2 {
     color: white;
     font-size: 42px;
     text-align: center;
-  }
-  .projects-container {
-    display: flex;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-  }
+}
+
+.project-container {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-pic1,
+.project-pic2,
+.project-pic3 {
+    max-width: 100%;
+    height: auto;
+}
+
+.project-title {
+    color: white;
+    font-size: 24px;
+}
+
+.project-details,
+.project-details3 {
+    color: white;
+}
+
+.project-link {
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
   .eduimg{
     width: 40%;
     height: 100%;
